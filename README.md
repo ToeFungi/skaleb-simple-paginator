@@ -1,0 +1,1 @@
+# skaleb-simple-paginator
