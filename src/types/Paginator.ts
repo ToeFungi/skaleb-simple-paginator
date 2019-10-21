@@ -15,22 +15,23 @@ interface Paginator<T> {
 	getPage(): PaginationResponse<T>
 
 	/**
-	 * Increase the page number by one
+	 * Increase the page number by one.
 	 */
 	incrementPage(): Paginator<T>
 
 	/**
-	 * Decrease the page number by one
+	 * Decrease the page number by one. If the page value is 1, the page number will not decrement
 	 */
 	decrementPage(): Paginator<T>
 
 	/**
-	 * Set the page number for the paginated responses
+	 * Set the page number for the paginated responses. If given value is less than 1, then the page number defaults to 1
 	 */
 	setPageNumber(pageNumber: number): Paginator<T>
 
 	/**
-	 * Set the number of responses returned in the paginated response
+	 * Set the number of responses returned in the paginated response. If given value is less than 1, then the page size
+	 * defaults to 1
 	 */
 	setPageSize(pageSize: number): Paginator<T>
 }

@@ -4,7 +4,8 @@
   "description": "Simple client side pagination",
   "main": "index.ts",
   "scripts": {
-    "test": "mocha"
+    "test": "mocha",
+    "test-coverage": "nyc mocha"
   },
   "repository": {
     "type": "git",

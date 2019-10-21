@@ -102,6 +102,11 @@ class SimplePaginator<T> implements Paginator<T> {
 	 * @inheritDoc
 	 */
 	public setPageNumber(pageNumber: number): this {
+		if (pageNumber < 1) {
+			this.pageNumber = 1
+			return this
+		}
+
 		this.pageNumber = pageNumber
 		return this
 	}
@@ -110,6 +115,11 @@ class SimplePaginator<T> implements Paginator<T> {
 	 * @inheritDoc
 	 */
 	public setPageSize(pageSize: number): this {
+		if (pageSize < 1) {
+			this.pageSize = 1
+			return this
+		}
+
 		this.pageSize = pageSize
 		return this
 	}
