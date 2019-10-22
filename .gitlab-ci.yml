@@ -1,0 +1,17 @@
+cache:
+  untracked: true
+
+stages:
+  - setup
+  - tests
+  
+setup:
+  stage: setup
+  script:
+    - npm i
+    
+tests:
+  stage: tests
+  script:
+    - npm test
+    
