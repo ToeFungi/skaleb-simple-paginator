@@ -6,14 +6,15 @@ node_js:
 addons:
   sonarcloud:
     token:
-      secure: "a812ce618c1af99c6dbcdb1fc9e5336a32da0a44"
+      secure: "a9d62f889c262b5909478eeb0a596b30585d57fa"
 
 install:
   - npm install
 
 script:
-  - npm run test
+  - npm run test && sonar-scanner
 
 cache:
   directories:
     - '$HOME/.sonar/cache'
+    -
