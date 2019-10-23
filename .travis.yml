@@ -1,0 +1,19 @@
+language: node_js
+
+node_js:
+  - "10"
+
+addons:
+  sonarcloud:
+    token:
+      secure: "a812ce618c1af99c6dbcdb1fc9e5336a32da0a44"
+
+install:
+  - npm install
+
+script:
+  - npm run test
+
+cache:
+  directories:
+    - '$HOME/.sonar/cache'
