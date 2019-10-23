@@ -19,7 +19,7 @@
     "Simple"
   ],
   "author": "Alex Pickering",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/ToeFungi/skaleb-simple-paginator/issues"
   },
