@@ -10,12 +10,83 @@ This paginator was built specifically with TypeScript in mind.
 // TODO - add to npm and include installation guide
 
 ## How To Use
-// TODO - add how to use section with code snippets
+Importing
+```javascript
+import { SimplePaginator } from './SimplePaginator'
 
-## Contributions
-Feedback and contributions are more than welcome. Should you feel there is something you wish to contribute to this 
-paginator, feel free to make a merge request. Ensure that whatever proposed change, has tests covering various cases for
-the change. 
+const pageSize: number = 5
+const pageNumber: number = 1
+const arr: Array<string> = [ 'a', 'b', 'c', 'd', 'e', 'f', 'g' ]
+```
+
+Instantiation
+```javascript
+const paginator = new SimplePaginator()
+  .setArray(arr)
+  .setPageSize(pageSize)
+  .setPageNumber(pageNumber)
+
+// You can also instantiate the `SimplePaginator` with the variables in the constructor
+const paginator = new SimplePaginator(arr, pageNumber, pageSize)
+```
+
+`.setArray(x)` sets the array to be paginated. The returned items should retain their types.
+```javascript
+// The paginator will use the array defined above to paginate
+paginator.setArray(arr)
+```
+
+`.getPage()` returns the number of items specified which are on the page specified.
+```javascript
+// Should return `PaginatorResponse` with five items being equal to
+// [ 'a', 'b', 'c', 'd', 'e' ]
+console.log('Page 1 from paginator', paginator.getPage())
+```
+
+`.incrementPage()` increases the page number within the paginator by one.
+```javascript
+// Should return `PaginatorResponse` with two items being equal to
+// [ 'f', 'g' ]
+console.log('Page 2 from paginator', paginator.incrementPage()
+  .getPage())
+```
+
+`.decrementPage()` decreases the page number within the paginator by one. If the page number is less than one then the 
+page number defaults to one.
+```javascript
+// Should return `PaginatorResponse` with five items being equal to
+// [ 'a', 'b', 'c', 'd', 'e' ]
+console.log('Page 1 from paginator', paginator.decrementPage()
+  .getPage())
+```
+
+`.setPageNumber(x)` sets the page number within the paginator to the value specified. If the value specified is less
+than one then the page number defaults to one.
+```javascript
+// Should return `PaginatorResponse` with two items being equal to
+// [ 'f', 'g' ]
+console.log('Page 2 from paginator', paginator.setPageNumber(2)
+  .getPage())
+
+// Should return `PaginatorResponse` with five items being equal to
+// [ 'a', 'b', 'c', 'd', 'e' ]
+console.log('Page 1 from paginator', paginator.setPageNumber(-1)
+  .getPage())
+``` 
+
+`.setPageSize(x)` sets the number of items to be returned in the `PaginatorResponse` for any given page to the value
+specified. If the value specified is less than one then the page size defaults to one. 
+```javascript
+// Should return `PaginatorResponse` with three items being equal to
+// [ 'a', 'b', 'c' ]
+console.log('Page 1 from paginator', paginator.setPageSize(3)
+  .getPage())
+
+// Should return `PaginatorResponse` with one item being equal to
+// [ 'a' ]
+console.log('Page 2 from paginator', paginator.setPageSize(-1)
+  .getPage())
+```
 
 ## Tests
 This project is completely covered by unit tests. Various cases have been accounted for both in the codebase and in the
@@ -27,3 +98,8 @@ To run the tests, you can simply run the following `test` command/s
 npm run test
 npm run test-coverage
 ```
+
+## Contributions
+Feedback and contributions are more than welcome. Should you feel there is something you wish to contribute to this 
+paginator, feel free to make a merge request. Ensure that whatever proposed change, has tests covering various cases for
+the change. 
