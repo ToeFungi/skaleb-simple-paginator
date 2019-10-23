@@ -12,9 +12,8 @@ install:
   - npm install
 
 script:
-  - npm run test && sonar-scanner
+  - npm run test && npm run coverage && sonar-scanner
 
 cache:
   directories:
     - '$HOME/.sonar/cache'
-    -
