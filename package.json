@@ -5,7 +5,8 @@
   "main": "index.ts",
   "scripts": {
     "test": "mocha",
-    "test-coverage": "nyc mocha"
+    "coverage": "nyc mocha",
+    "lint": "tslint -c tslint.json --project tsconfig.json 'src/**/*.ts'"
   },
   "repository": {
     "type": "git",
@@ -31,6 +32,8 @@
     "mocha": "^6.2.2",
     "nyc": "^14.1.1",
     "ts-node": "8.0.2",
+    "tslint": "^5.20.0",
+    "tslint-config-standard": "^8.0.1",
     "typescript": "3.3.3333"
   }
 }

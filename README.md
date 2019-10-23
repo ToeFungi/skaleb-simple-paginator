@@ -96,7 +96,8 @@ correct the bug.
 To run the tests, you can simply run the following `test` command/s
 ```bash
 npm run test
-npm run test-coverage
+npm run coverage
+npm run lint
 ```
 
 ## Contributions
