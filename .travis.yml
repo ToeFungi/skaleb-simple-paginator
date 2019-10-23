@@ -12,7 +12,7 @@ install:
   - npm install
 
 script:
-  - npm run coverage && sonar-scanner
+  - npm run coverage && npm run report-coverage && sonar-scanner
 
 cache:
   directories:
