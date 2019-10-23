@@ -4,6 +4,4 @@
 # Project
 .nyc_output/
 node_modules/
-
-# Coverage
-*.lcov
+coverage/
