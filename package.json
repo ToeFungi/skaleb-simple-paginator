@@ -5,7 +5,8 @@
   "main": "index.ts",
   "scripts": {
     "build": "tsc",
-    "test": "nyc --reporter=lcov mocha",
+    "test": "mocha",
+    "coverage": "nyc --reporter=lcov mocha",
     "lint": "tslint -c tslint.json --project tsconfig.json 'src/**/*.ts'"
   },
   "repository": {
@@ -16,7 +17,10 @@
     "Pagination",
     "Client",
     "Side",
-    "Simple"
+    "Simple",
+    "Arrays",
+    "Dataset",
+    "Pages"
   ],
   "author": "Alex Pickering",
   "license": "MIT",
@@ -28,13 +32,12 @@
     "@types/chai": "4.1.7",
     "@types/mocha": "5.2.6",
     "@types/node": "11.9.5",
-    "chai": "4.2.0",
-    "codecov": "^3.6.1",
-    "mocha": "^6.2.2",
     "nyc": "14.1.1",
+    "chai": "4.2.0",
+    "mocha": "^6.2.2",
     "ts-node": "8.0.2",
     "tslint": "^5.20.0",
-    "tslint-config-standard": "^8.0.1",
-    "typescript": "3.3.3333"
+    "typescript": "3.3.3333",
+    "tslint-config-standard": "^8.0.1"
   }
 }
