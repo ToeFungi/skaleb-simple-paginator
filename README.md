@@ -11,19 +11,23 @@ these arrays.
 This paginator was built specifically with TypeScript in mind.
 
 ## Installation
-// TODO - add to npm and include installation guide
+To install this package you can simply use the install command below.
+```bash
+$ npm i --save skaleb-simple-paginator
+```
 
 ## How To Use
-Importing
+Importing the package into your class.
 ```javascript
 import { SimplePaginator } from './SimplePaginator'
 
+// Variables that will be used below in `Instantiation`
 const pageSize: number = 5
 const pageNumber: number = 1
 const arr: Array<string> = [ 'a', 'b', 'c', 'd', 'e', 'f', 'g' ]
 ```
 
-Instantiation
+Instantiating a new instance of the paginator.
 ```javascript
 const paginator = new SimplePaginator()
   .setArray(arr)
@@ -88,7 +92,7 @@ console.log('Page 1 from paginator', paginator.setPageSize(3)
 
 // Should return `PaginatorResponse` with one item being equal to
 // [ 'a' ]
-console.log('Page 2 from paginator', paginator.setPageSize(-1)
+console.log('Page 1 from paginator', paginator.setPageSize(-1)
   .getPage())
 ```
 
@@ -97,7 +101,7 @@ This project is completely covered by unit tests. Various cases have been accoun
 tests covering it. If a bug is picked up regarding the test suite or code, feel free to make a contribution to help
 correct the bug.
 
-To run the tests, you can simply run the following `test` command/s
+To run the tests, you can simply run the following `test` command/s.
 ```bash
 npm run test
 npm run coverage
