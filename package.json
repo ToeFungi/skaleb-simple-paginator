@@ -4,8 +4,8 @@
   "description": "Simple client side pagination",
   "main": "index.ts",
   "scripts": {
+    "build": "tsc",
     "test": "nyc --reporter=lcov mocha",
-    "coverage": "codecov",
     "lint": "tslint -c tslint.json --project tsconfig.json 'src/**/*.ts'"
   },
   "repository": {
@@ -31,7 +31,7 @@
     "chai": "4.2.0",
     "codecov": "^3.6.1",
     "mocha": "^6.2.2",
-    "nyc": "^14.1.1",
+    "nyc": "14.1.1",
     "ts-node": "8.0.2",
     "tslint": "^5.20.0",
     "tslint-config-standard": "^8.0.1",
