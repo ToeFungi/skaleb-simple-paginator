@@ -15,6 +15,64 @@ describe('SimplePaginator', () => {
     simplePaginator = new SimplePaginator()
   })
 
+  describe('#constructor', () => {
+    it('sets the array passed into the constructor to the classes paginated array', () => {
+      const items = [ 'abc', 'def' ]
+
+      const expectedResponse = {
+        items,
+        meta: {
+          ...baseMeta
+        }
+      }
+
+      return new SimplePaginator(items).getPage()
+        .should.deep.equal(expectedResponse)
+    })
+
+    it('sets the page number passed into the constructor to the pagination`s current page', () => {
+      const items = [ 'a' ]
+      const pageNumber = 3
+
+      const expectedMeta = {
+        ...baseMeta,
+        endIndex: 30,
+        pageNumber: 3,
+        startIndex: 20
+      }
+
+      const expectedResponse = {
+        items: [],
+        meta: expectedMeta
+      }
+
+      return new SimplePaginator(items, pageNumber).getPage()
+        .should.deep.equal(expectedResponse)
+    })
+
+    it('sets the page size passed into the constructor to the pagination`s page size', () => {
+      const pageSize = 1
+      const pageNumber = 1
+      const items = [ 'a', 'b' ]
+
+      const expectedItems = [ 'a' ]
+      const expectedMeta = {
+        ...baseMeta,
+        endIndex: 1,
+        pageSize: 1,
+        hasMore: true
+      }
+
+      const expectedResponse = {
+        items: expectedItems,
+        meta: expectedMeta
+      }
+
+      return new SimplePaginator(items, pageNumber, pageSize).getPage()
+        .should.deep.equal(expectedResponse)
+    })
+  })
+
   describe('#setArray', () => {
     const items = [ 'a', 'b', 'c' ]
 
@@ -37,47 +95,55 @@ describe('SimplePaginator', () => {
 
   describe('#getPage', () => {
     it('returns all items when `pageSize` is `10` and there are `7` items', () => {
+      const items = [ 'a', 'b', 'c', 'd', 'e', 'f', 'g' ]
+
       const expectedResponse = {
-        items: [ 'a', 'b', 'c', 'd', 'e', 'f', 'g' ],
+        items,
         meta: baseMeta
       }
 
-      simplePaginator.setArray([ 'a', 'b', 'c', 'd', 'e', 'f', 'g' ])
+      simplePaginator.setArray(items)
 
       return simplePaginator.getPage()
         .should.deep.equal(expectedResponse)
     })
 
     it('returns `meta.hasMore` as `false` when there are `10` items and `pageSize` is 10', () => {
+      const items = [ 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j' ]
+
       const expectedResponse = {
-        items: [ 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j' ],
+        items,
         meta: baseMeta
       }
 
-      simplePaginator.setArray([ 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j' ])
+      simplePaginator.setArray(items)
 
       return simplePaginator.getPage()
         .should.deep.equal(expectedResponse)
     })
 
     it('returns `meta.hasMore` as `true` when there are `11` items and `pageSize` is 10', () => {
+      const items = [ 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k' ]
+      const expectedItems = [ 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j' ]
       const expectedResponse = {
-        items: [ 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j' ],
+        items: expectedItems,
         meta: {
           ...baseMeta,
           hasMore: true
         }
       }
 
-      simplePaginator.setArray([ 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k' ])
+      simplePaginator.setArray(items)
 
       return simplePaginator.getPage()
         .should.deep.equal(expectedResponse)
     })
 
     it('returns `1` item when `pageNumber` is `2`, `pageSize` is `10` and there are `11` items', () => {
+      const items = [ 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k' ]
+      const expectedItems = [ 'k' ]
       const expectedResponse = {
-        items: [ 'k' ],
+        items: expectedItems,
         meta: {
           ...baseMeta,
           pageSize: 10,
@@ -87,7 +153,7 @@ describe('SimplePaginator', () => {
         }
       }
 
-      simplePaginator.setArray([ 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k' ])
+      simplePaginator.setArray(items)
         .incrementPage()
 
       return simplePaginator.getPage()
