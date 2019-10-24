@@ -9,10 +9,11 @@ addons:
       secure: "a9d62f889c262b5909478eeb0a596b30585d57fa"
 
 install:
-  - npm install
+  - npm i
 
 script:
-  - npm run test && sonar-scanner
+  - npm run coverage
+  - sonar-scanner
 
 cache:
   directories:
