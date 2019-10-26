@@ -1,6 +1,8 @@
 # Simple Paginator
 [![Build Status](https://travis-ci.org/ToeFungi/skaleb-simple-paginator.svg?branch=master)](https://travis-ci.org/ToeFungi/skaleb-simple-paginator)
 [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=ToeFungi_skaleb-simple-paginator&metric=alert_status)](https://sonarcloud.io/dashboard?id=ToeFungi_skaleb-simple-paginator)
+[![Bugs](https://sonarcloud.io/api/project_badges/measure?project=ToeFungi_skaleb-simple-paginator&metric=bugs)](https://sonarcloud.io/dashboard?id=ToeFungi_skaleb-simple-paginator)
+[![Code Smells](https://sonarcloud.io/api/project_badges/measure?project=ToeFungi_skaleb-simple-paginator&metric=code_smells)](https://sonarcloud.io/dashboard?id=ToeFungi_skaleb-simple-paginator)
 [![Coverage](https://sonarcloud.io/api/project_badges/measure?project=ToeFungi_skaleb-simple-paginator&metric=coverage)](https://sonarcloud.io/dashboard?id=ToeFungi_skaleb-simple-paginator)
 
 This simple paginator was built to allow for easily paginating through arrays that may be client side. Usually these 
