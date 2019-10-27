@@ -1,4 +1,5 @@
 # Simple Paginator
+[![NPM Version](https://badge.fury.io/js/skaleb-simple-paginator.svg)](https://badge.fury.io/js/skaleb-simple-paginator)
 [![Build Status](https://travis-ci.org/ToeFungi/skaleb-simple-paginator.svg?branch=master)](https://travis-ci.org/ToeFungi/skaleb-simple-paginator)
 [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=ToeFungi_skaleb-simple-paginator&metric=alert_status)](https://sonarcloud.io/dashboard?id=ToeFungi_skaleb-simple-paginator)
 [![Bugs](https://sonarcloud.io/api/project_badges/measure?project=ToeFungi_skaleb-simple-paginator&metric=bugs)](https://sonarcloud.io/dashboard?id=ToeFungi_skaleb-simple-paginator)

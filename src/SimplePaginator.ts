@@ -24,12 +24,12 @@ class SimplePaginator<T> implements Paginator<T> {
   /**
    * This is the number of items that will be returned in the array set.
    */
-  private pageSize: number = 10
+  private pageSize: number
 
   /**
    * This is the page number indicating the section of the array that should be selected.
    */
-  private pageNumber: number = 1
+  private pageNumber: number
 
   /**
    * Instantiates a new Paginator.
