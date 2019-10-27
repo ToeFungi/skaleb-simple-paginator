@@ -11,9 +11,14 @@ addons:
 install:
   - npm i
 
-script:
-  - npm run coverage
-  - sonar-scanner
+jobs:
+  include:
+    - stage: Audit NPM Packages
+      script: npm audit
+    - stage: Test Coverage
+      script: npm run coverage
+    - stage: Run Code Analysis
+      script: sonar-scanner
 
 cache:
   directories:
