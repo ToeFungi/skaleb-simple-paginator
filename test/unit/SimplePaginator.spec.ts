@@ -12,7 +12,7 @@ describe('SimplePaginator', () => {
   }
 
   beforeEach(() => {
-    simplePaginator = new SimplePaginator()
+    simplePaginator = new SimplePaginator<string>()
   })
 
   describe('#constructor', () => {

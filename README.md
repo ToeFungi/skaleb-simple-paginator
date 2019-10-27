@@ -31,7 +31,7 @@ const arr: Array<string> = [ 'a', 'b', 'c', 'd', 'e', 'f', 'g' ]
 
 Instantiating a new instance of the paginator.
 ```javascript
-const paginator = new SimplePaginator()
+const paginator = new SimplePaginator<string>()
   .setArray(arr)
   .setPageSize(pageSize)
   .setPageNumber(pageNumber)
