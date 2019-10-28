@@ -1,10 +1,10 @@
 # Simple Paginator
 [![NPM Version](https://badge.fury.io/js/skaleb-simple-paginator.svg)](https://badge.fury.io/js/skaleb-simple-paginator)
 [![Build Status](https://travis-ci.org/ToeFungi/skaleb-simple-paginator.svg?branch=master)](https://travis-ci.org/ToeFungi/skaleb-simple-paginator)
-[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=ToeFungi_skaleb-simple-paginator&metric=alert_status)](https://sonarcloud.io/dashboard?id=ToeFungi_skaleb-simple-paginator)
-[![Bugs](https://sonarcloud.io/api/project_badges/measure?project=ToeFungi_skaleb-simple-paginator&metric=bugs)](https://sonarcloud.io/dashboard?id=ToeFungi_skaleb-simple-paginator)
-[![Code Smells](https://sonarcloud.io/api/project_badges/measure?project=ToeFungi_skaleb-simple-paginator&metric=code_smells)](https://sonarcloud.io/dashboard?id=ToeFungi_skaleb-simple-paginator)
-[![Coverage](https://sonarcloud.io/api/project_badges/measure?project=ToeFungi_skaleb-simple-paginator&metric=coverage)](https://sonarcloud.io/dashboard?id=ToeFungi_skaleb-simple-paginator)
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=skaleb-simple-paginator&metric=alert_status)](https://sonarcloud.io/dashboard?id=skaleb-simple-paginator)
+[![Bugs](https://sonarcloud.io/api/project_badges/measure?project=skaleb-simple-paginator&metric=bugs)](https://sonarcloud.io/dashboard?id=skaleb-simple-paginator)
+[![Code Smells](https://sonarcloud.io/api/project_badges/measure?project=skaleb-simple-paginator&metric=code_smells)](https://sonarcloud.io/dashboard?id=skaleb-simple-paginator)
+[![Coverage](https://sonarcloud.io/api/project_badges/measure?project=skaleb-simple-paginator&metric=coverage)](https://sonarcloud.io/dashboard?id=skaleb-simple-paginator)
 
 This simple paginator was built to allow for easily paginating through arrays that may be client side. Usually these 
 types of things take place when the data is being sourced from either a database or API but on the odd occasion, it 
