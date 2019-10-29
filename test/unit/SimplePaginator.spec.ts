@@ -8,7 +8,8 @@ describe('SimplePaginator', () => {
     pageSize: 10,
     endIndex: 10,
     pageNumber: 1,
-    startIndex: 0
+    startIndex: 0,
+    totalPages: 0
   }
 
   beforeEach(() => {
@@ -267,11 +268,9 @@ describe('SimplePaginator', () => {
       const expectedResponse = {
         items: [],
         meta: {
+          ...baseMeta,
           endIndex: 1,
-          pageSize: 1,
-          startIndex: 0,
-          pageNumber: 1,
-          hasMore: false
+          pageSize: 1
         }
       }
 
@@ -284,11 +283,9 @@ describe('SimplePaginator', () => {
       const expectedResponse = {
         items: [],
         meta: {
+          ...baseMeta,
           endIndex: 3,
-          pageSize: 3,
-          pageNumber: 1,
-          startIndex: 0,
-          hasMore: false
+          pageSize: 3
         }
       }
 

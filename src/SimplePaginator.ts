@@ -3,33 +3,38 @@ import { PaginationResponse } from './types/PaginationResponse'
 
 /**
  * SimplePaginator paginates a given array with the criteria provided. Setting the page size, page number and returning
- * the subset of the array.
+ * the subset of the array
  */
 class SimplePaginator<T> implements Paginator<T> {
   /**
-   * The array to be paginated.
+   * The array to be paginated
    */
   private arr: Array<T>
 
   /**
-   * Default ending index. This is the index that the array will be sliced at.
+   * Default ending index. This is the index that the array will be sliced at
    */
   private endIndex: number
 
   /**
-   * Default starting index. This is the index that the array will will start from.
+   * Default starting index. This is the index that the array will will start from
    */
   private startIndex: number
 
   /**
-   * This is the number of items that will be returned in the array set.
+   * This is the number of items that will be returned in the array set
    */
   private pageSize: number
 
   /**
-   * This is the page number indicating the section of the array that should be selected.
+   * This is the page number indicating the section of the array that should be selected
    */
   private pageNumber: number
+
+  /**
+   * This is the number of pages the paginator will break the array into given the current setup
+   */
+  private totalPages: number
 
   /**
    * Instantiates a new Paginator.
@@ -38,6 +43,7 @@ class SimplePaginator<T> implements Paginator<T> {
     this.arr = arr
     this.endIndex = 0
     this.startIndex = 0
+    this.totalPages = 0
 
     this.pageSize = pageSize
     this.pageNumber = pageNumber
@@ -73,7 +79,8 @@ class SimplePaginator<T> implements Paginator<T> {
         pageSize: this.pageSize,
         endIndex: this.endIndex,
         pageNumber: this.pageNumber,
-        startIndex: this.startIndex
+        startIndex: this.startIndex,
+        totalPages: this.totalPages
       }
     }
   }

@@ -30,6 +30,10 @@ interface PaginationResponse<T> {
      * Indication of the current start index (including) the array will be split from
      */
     startIndex: number
+    /**
+     * Indication of the total number of pages that the paginator has split the array into
+     */
+    totalPages: number
   }
 }
 
