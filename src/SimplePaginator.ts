@@ -130,6 +130,13 @@ class SimplePaginator<T> implements Paginator<T> {
     this.pageSize = pageSize
     return this
   }
+
+  /**
+   * @inheritDoc
+   */
+  public getTotalPages(): number {
+    return this.totalPages
+  }
 }
 
 export { SimplePaginator }

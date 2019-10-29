@@ -34,6 +34,11 @@ interface Paginator<T> {
    * defaults to 1
    */
   setPageSize(pageSize: number): Paginator<T>
+
+  /**
+   * Returns the total number of pages that the paginator can create given the current configuration
+   */
+  getTotalPages(): number
 }
 
 export { Paginator }

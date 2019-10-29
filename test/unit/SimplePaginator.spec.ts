@@ -294,4 +294,11 @@ describe('SimplePaginator', () => {
         .should.deep.equal(expectedResponse)
     })
   })
+
+  describe('#getTotalPages', () => {
+    it('returns a number representing the total number of pages the paginator can create', () => {
+      return simplePaginator.getTotalPages()
+        .should.deep.equal(0)
+    })
+  })
 })
