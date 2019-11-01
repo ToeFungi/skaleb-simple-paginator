@@ -11,11 +11,33 @@ addons:
 install:
   - npm i
 
-script:
-  - npm audit
-  - npm run coverage
-  - sonar-scanner
+stages:
+  - audit
+  - lint
+  - test
+  - sonar
+
+jobs:
+  include:
+    - stage: audit
+      name: "NPM Audit"
+      script:
+        - npm audit
+    - stage: lint
+      name: "Code Linting"
+      script:
+        - npm run lint
+    - stage: test
+      name: "Code Testing"
+      script:
+        - npm run coverage
+    - stage: sonar
+      name: "Code Analysis"
+      script:
+        - sonar-scanner
 
 cache:
   directories:
     - '$HOME/.sonar/cache'
+    - 'node_modules'
+    - 'coverage'
