@@ -49,54 +49,54 @@ paginator.setArray(arr)
 
 `.getPage()` returns the number of items specified which are on the page specified.
 ```javascript
-// Should return `PaginatorResponse` with five items being equal to
+// Will return `PaginatorResponse` with five items being equal to
 // [ 'a', 'b', 'c', 'd', 'e' ]
-console.log('Page 1 from paginator', paginator.getPage())
+return paginator.getPage()
 ```
 
 `.incrementPage()` increases the page number within the paginator by one.
 ```javascript
-// Should return `PaginatorResponse` with two items being equal to
+// Will return `PaginatorResponse` with two items being equal to
 // [ 'f', 'g' ]
-console.log('Page 2 from paginator', paginator.incrementPage()
-  .getPage())
+return paginator.incrementPage()
+  .getPage()
 ```
 
 `.decrementPage()` decreases the page number within the paginator by one. If the page number is less than one then the 
 page number defaults to one.
 ```javascript
-// Should return `PaginatorResponse` with five items being equal to
+// Will return `PaginatorResponse` with five items being equal to
 // [ 'a', 'b', 'c', 'd', 'e' ]
-console.log('Page 1 from paginator', paginator.decrementPage()
-  .getPage())
+return paginator.decrementPage()
+  .getPage()
 ```
 
 `.setPageNumber(x)` sets the page number within the paginator to the value specified. If the value specified is less
 than one then the page number defaults to one.
 ```javascript
-// Should return `PaginatorResponse` with two items being equal to
+// Will return `PaginatorResponse` with two items being equal to
 // [ 'f', 'g' ]
-console.log('Page 2 from paginator', paginator.setPageNumber(2)
-  .getPage())
+return paginator.setPageNumber(2)
+  .getPage()
 
-// Should return `PaginatorResponse` with five items being equal to
+// Will return `PaginatorResponse` with five items being equal to
 // [ 'a', 'b', 'c', 'd', 'e' ]
-console.log('Page 1 from paginator', paginator.setPageNumber(-1)
-  .getPage())
+return paginator.setPageNumber(-1)
+  .getPage()
 ``` 
 
 `.setPageSize(x)` sets the number of items to be returned in the `PaginatorResponse` for any given page to the value
 specified. If the value specified is less than one then the page size defaults to one. 
 ```javascript
-// Should return `PaginatorResponse` with three items being equal to
+// Will return `PaginatorResponse` with three items being equal to
 // [ 'a', 'b', 'c' ]
-console.log('Page 1 from paginator', paginator.setPageSize(3)
-  .getPage())
+return paginator.setPageSize(3)
+  .getPage()
 
-// Should return `PaginatorResponse` with one item being equal to
+// Will return `PaginatorResponse` with one item being equal to
 // [ 'a' ]
-console.log('Page 1 from paginator', paginator.setPageSize(-1)
-  .getPage())
+return paginator.setPageSize(-1)
+  .getPage()
 ```
 
 ## Tests
