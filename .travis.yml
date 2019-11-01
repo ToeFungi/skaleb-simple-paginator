@@ -3,15 +3,14 @@ language: node_js
 node_js:
   - "10"
 
-addons:
-  sonarcloud:
-    token:
-      secure: "a9d62f889c262b5909478eeb0a596b30585d57fa"
-
-install:
-  - npm i
+cache:
+  directories:
+    - '$HOME/.sonar/cache'
+    - 'node_modules'
+    - 'coverage'
 
 stages:
+  - setup
   - audit
   - lint
   - test
@@ -19,25 +18,22 @@ stages:
 
 jobs:
   include:
+    - stage: setup
+      script:
+        - npm i
     - stage: audit
-      name: "NPM Audit"
       script:
         - npm audit
     - stage: lint
-      name: "Code Linting"
       script:
         - npm run lint
     - stage: test
-      name: "Code Testing"
       script:
         - npm run coverage
     - stage: sonar
-      name: "Code Analysis"
       script:
         - sonar-scanner
-
-cache:
-  directories:
-    - '$HOME/.sonar/cache'
-    - 'node_modules'
-    - 'coverage'
+      addons:
+        sonarcloud:
+          token:
+            secure: "a9d62f889c262b5909478eeb0a596b30585d57fa"
