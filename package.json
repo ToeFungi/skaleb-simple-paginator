@@ -1,13 +1,13 @@
 {
   "name": "skaleb-simple-paginator",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "Simple client side pagination",
   "main": "index.ts",
   "scripts": {
     "build": "tsc",
     "test": "mocha",
     "coverage": "nyc --reporter=lcov mocha",
-    "lint": "tslint -c tslint.json --project tsconfig.json 'src/**/*.ts'"
+    "lint": "tslint -c tslint.json 'src/**/*.ts'"
   },
   "repository": {
     "type": "git",
