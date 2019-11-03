@@ -19,7 +19,7 @@ To install this package you can simply use the install command below.
 $ npm i --save skaleb-simple-paginator
 ```
 
-## How To Use
+## Usage
 Importing the package into your class.
 ```javascript
 import { SimplePaginator } from './SimplePaginator'
@@ -106,9 +106,9 @@ correct the bug.
 
 To run the tests, you can simply run the following `test` command/s.
 ```bash
+npm run lint
 npm run test
 npm run coverage
-npm run lint
 ```
 
 ## Contributions
