@@ -3,6 +3,8 @@
     "strict": true,
     "sourceMap": true,
     "resolveJsonModule": true,
+    "declaration": true,
+    "declarationMap": true,
     "lib": [
       "es2018"
     ],
@@ -13,10 +15,10 @@
     ]
   },
   "include": [
-    "src/**/*"
+    "src"
   ],
   "exclude": [
     "node_modules",
-    "test/**/*.spec.ts"
+    "test"
   ]
 }

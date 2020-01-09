@@ -1,8 +1,9 @@
 {
   "name": "skaleb-simple-paginator",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "Simple client side pagination",
-  "main": "index.ts",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "scripts": {
     "build": "tsc",
     "test": "mocha",
