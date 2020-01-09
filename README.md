@@ -22,7 +22,7 @@ $ npm i --save skaleb-simple-paginator
 ## Usage
 Importing the package into your class.
 ```javascript
-import { SimplePaginator } from './SimplePaginator'
+import { SimplePaginator } from 'skaleb-simple-paginator'
 
 // Variables that will be used below in `Instantiation`
 const pageSize: number = 5
