@@ -1,7 +1,7 @@
 {
   "name": "skaleb-simple-paginator",
-  "version": "1.0.7",
-  "description": "Simple client side pagination",
+  "version": "1.0.8",
+  "description": "Simple client for client-side pagination making use of generic types and allowing for chainable methods",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
@@ -10,9 +10,18 @@
     "coverage": "nyc --reporter=lcov mocha",
     "lint": "tslint -c tslint.json 'src/**/*.ts'"
   },
+  "files": [
+    "dist",
+    "test",
+    "LICENSE",
+    ".nycrc.json",
+    ".mocharc.js",
+    "tslint.json",
+    "tsconfig.json"
+  ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ToeFungi/skaleb-simple-paginator.git"
+    "url": "https://github.com/ToeFungi/skaleb-simple-paginator.git"
   },
   "keywords": [
     "Pagination",
@@ -23,22 +32,26 @@
     "Dataset",
     "Pages"
   ],
-  "author": "Alex Pickering",
+  "author": {
+    "email": "pickeringacw@gmail.com",
+    "name": "Alex Pickering",
+    "url": "https://github.com/ToeFungi/"
+  },
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/ToeFungi/skaleb-simple-paginator/issues"
   },
   "homepage": "https://github.com/ToeFungi/skaleb-simple-paginator#readme",
   "devDependencies": {
-    "@types/chai": "4.1.7",
-    "@types/mocha": "5.2.6",
-    "@types/node": "11.9.5",
-    "nyc": "14.1.1",
+    "@types/chai": "4.2.7",
+    "@types/mocha": "5.2.7",
+    "@types/node": "13.1.8",
+    "nyc": "15.0.0",
     "chai": "4.2.0",
-    "mocha": "^6.2.2",
-    "ts-node": "8.0.2",
-    "tslint": "^5.20.0",
-    "typescript": "3.3.3333",
-    "tslint-config-standard": "^8.0.1"
+    "mocha": "7.0.0",
+    "ts-node": "8.6.2",
+    "tslint": "6.0.0",
+    "typescript": "3.7.5",
+    "tslint-config-standard": "9.0.0"
   }
 }

@@ -13,6 +13,22 @@ these arrays.
 
 This paginator was built specifically with TypeScript in mind.
 
+## Contents
+- [Installation](#installation)
+- [Usage](#usage)
+    - [Importing](#importing)
+    - [Instantiate instance](#instantiating)
+    - [Setting array](#set-initial-dataset)
+    - [Fetching page](#get-current-page)
+    - [Next page](#increase-page-number)
+    - [Previous page](#decrease-page-number)
+    - [Setting page](#set-page-number)
+    - [Setting page size](#set-page-size)
+- [Testing](#tests)
+- [Issues](#issues)
+- [Contributions](#contributions)
+- [License](#license)
+
 ## Installation
 To install this package you can simply use the install command below.
 ```bash
@@ -20,8 +36,9 @@ $ npm i --save skaleb-simple-paginator
 ```
 
 ## Usage
+#### Importing
 Importing the package into your class.
-```javascript
+```typescript
 import { SimplePaginator } from 'skaleb-simple-paginator'
 
 // Variables that will be used below in `Instantiation`
@@ -30,8 +47,9 @@ const pageNumber: number = 1
 const arr: Array<string> = [ 'a', 'b', 'c', 'd', 'e', 'f', 'g' ]
 ```
 
+#### Instantiating
 Instantiating a new instance of the paginator.
-```javascript
+```typescript
 const paginator = new SimplePaginator<string>()
   .setArray(arr)
   .setPageSize(pageSize)
@@ -41,39 +59,44 @@ const paginator = new SimplePaginator<string>()
 const paginator = new SimplePaginator(arr, pageNumber, pageSize)
 ```
 
+#### Set Initial Dataset
 `.setArray(x)` sets the array to be paginated. The returned items should retain their types.
-```javascript
+```typescript
 // The paginator will use the array defined above to paginate
 paginator.setArray(arr)
 ```
 
+#### Get Current Page
 `.getPage()` returns the number of items specified which are on the page specified.
-```javascript
+```typescript
 // Will return `PaginatorResponse` with five items being equal to
 // [ 'a', 'b', 'c', 'd', 'e' ]
 return paginator.getPage()
 ```
 
+#### Increase Page Number
 `.incrementPage()` increases the page number within the paginator by one.
-```javascript
+```typescript
 // Will return `PaginatorResponse` with two items being equal to
 // [ 'f', 'g' ]
 return paginator.incrementPage()
   .getPage()
 ```
 
+#### Decrease Page Number
 `.decrementPage()` decreases the page number within the paginator by one. If the page number is less than one then the 
 page number defaults to one.
-```javascript
+```typescript
 // Will return `PaginatorResponse` with five items being equal to
 // [ 'a', 'b', 'c', 'd', 'e' ]
 return paginator.decrementPage()
   .getPage()
 ```
 
+#### Set Page Number
 `.setPageNumber(x)` sets the page number within the paginator to the value specified. If the value specified is less
 than one then the page number defaults to one.
-```javascript
+```typescript
 // Will return `PaginatorResponse` with two items being equal to
 // [ 'f', 'g' ]
 return paginator.setPageNumber(2)
@@ -85,9 +108,10 @@ return paginator.setPageNumber(-1)
   .getPage()
 ``` 
 
+#### Set Page Size
 `.setPageSize(x)` sets the number of items to be returned in the `PaginatorResponse` for any given page to the value
 specified. If the value specified is less than one then the page size defaults to one. 
-```javascript
+```typescript
 // Will return `PaginatorResponse` with three items being equal to
 // [ 'a', 'b', 'c' ]
 return paginator.setPageSize(3)
@@ -111,7 +135,18 @@ npm run test
 npm run coverage
 ```
 
+## Issues
+If you find any problems while working with this library, please log an issue 
+[here](https://github.com/ToeFungi/skaleb-simple-paginator/issues) so that development can begin to rectify the 
+error.
+
 ## Contributions
-Feedback and contributions are more than welcome. Should you feel there is something you wish to contribute to this 
-paginator, feel free to make a merge request. Ensure that whatever proposed change, has tests covering various cases for
-the change. 
+This project is completely open source and as such, you are invited to make contributions. Fork the project, make some
+changes and make the pull request. Should you have any feedback regarding the functionality, please don't hesitate to
+open an issue so this can be resolved. Please ensure that any pull requests have unit tests that cover any additional
+functionality.
+
+## License
+MIT License
+
+Copyright (c) 2019 Alex Pickering
